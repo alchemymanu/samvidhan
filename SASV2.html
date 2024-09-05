@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sansthaein Aur Samvidhan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #009688;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            position: relative;
+        }
+        .menu-toggle {
+            display: none;
+            background-color: #00796b;
+            color: white;
+            border: none;
+            padding: 0.5em;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        .menu {
+            display: flex;
+            justify-content: center;
+            padding: 1em;
+        }
+        .menu a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1em;
+            font-size: 1.2em;
+        }
+        .menu a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 1em;
+        }
+        .game-option {
+            background-color: #ffffff;
+            border: 2px solid #009688;
+            border-radius: 12px;
+            padding: 1em;
+            margin: 1em 0;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .game-option:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .game-option h2 {
+            color: #009688;
+        }
+        .game-option button {
+            background-color: #009688;
+            color: white;
+            border: none;
+            padding: 0.5em 1.5em;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+        .game-option button:hover {
+            background-color: #00796b;
+        }
+        footer {
+            background-color: #009688;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .hamburger-menu {
+            display: none;
+            background-color: #009688;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 200px;
+            height: 100%;
+            box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+            transform: translateX(100%);
+            transition: transform 0.3s;
+        }
+        .hamburger-menu.active {
+            transform: translateX(0);
+        }
+        .hamburger-menu a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 1em;
+            border-bottom: 1px solid #00796b;
+        }
+        .hamburger-menu a:hover {
+            background-color: #00796b;
+        }
+        .search-bar {
+            margin: 1em 0;
+            display: flex;
+            justify-content: center;
+        }
+        .search-bar input[type="text"] {
+            width: 80%;
+            padding: 0.5em;
+            border-radius: 12px 0 0 12px;
+            border: 2px solid #009688;
+            font-size: 1em;
+        }
+        .search-bar button {
+            padding: 0.5em 1em;
+            border-radius: 0 12px 12px 0;
+            border: 2px solid #009688;
+            background-color: #009688;
+            color: white;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        .search-bar button:hover {
+            background-color: #00796b;
+        }
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .hamburger-menu {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
+        <h1>Sansthaein Aur Samvidhan</h1>
+        <p>Innovative digital solution to spread constitutional literacy through engaging games.</p>
+        <div class="menu">
+            <a href="index.html">Home</a>
+            <a href="constitution.html">Constitution</a>
+            <a href="courts.html">Courts</a>
+            <a href="probono.html">Pro Bono Advocates</a>
+        </div>
+    </header>
+
+    <div class="hamburger-menu" id="hamburgerMenu">
+        <a href="index.html">Home</a>
+        <a href="constitution.html">Constitution</a>
+        <a href="courts.html">Courts</a>
+        <a href="probono.html">Pro Bono Advocates</a>
+    </div>
+
+    <div class="container">
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search Constitution and IPC...">
+            <button onclick="performSearch()">Search</button>
+        </div>
+
+        <div class="game-option">
+            <h2>Spin the Wheel</h2>
+            <p>Learn about different parts of the Constitution with our Spin the Wheel game!</p>
+            <p><strong>How it works:</strong> Spin the wheel to land on different sections of the Constitution. Each section will reveal a brief summary and key points. It's an interactive way to explore the various components of our legal framework.</p>
+            <button onclick="alert('Spin the Wheel game coming soon!')">Play Now</button>
+        </div>
+        <div class="game-option">
+            <h2>Constitutional Cards</h2>
+            <p>Discover key articles and their simplified versions with our Card Game!</p>
+            <button onclick="alert('Constitutional Cards game coming soon!')">Play Now</button>
+        </div>
+        <div class="game-option">
+            <h2>Legislature Monopoly</h2>
+            <p>Learn about the Legislative process through our Monopoly-style game!</p>
+            <button onclick="alert('Legislature Monopoly game coming soon!')">Play Now</button>
+        </div>
+        <div class="game-option">
+            <h2>Judicial Snake & Ladder</h2>
+            <p>Explore the Judiciary system with our interactive Snake & Ladder game!</p>
+            <button onclick="alert('Judicial Snake & Ladder game coming soon!')">Play Now</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Sansthaein Aur Samvidhan. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('hamburgerMenu').classList.toggle('active');
+        }
+
+        function performSearch() {
+            const query = document.getElementById('searchInput').value;
+            alert('Search feature is under development. Searching for: ' + query);
+        }
+    </script>
+</body>
+</html>
